@@ -23,3 +23,31 @@
  * - Number of passing students
  * - Number of failing students
  */
+
+const scores = [
+  82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83, 76
+];
+
+function summarizeScores(list: number[]) {
+  let passed = 0;
+  let failed = 0;
+  let total = 0;
+
+  for (let i = 0; i < list.length; i++) {
+    total += list[i];
+    if (list[i] >= 75) {
+      passed++;
+    } else {
+      failed++;
+    }
+  }
+
+  let avg = total / list.length;
+
+  console.log("Total score:", total);
+  console.log("Average score:", avg);
+  console.log("Passed:", passed);
+  console.log("Failed:", failed);
+}
+
+summarizeScores(scores);
