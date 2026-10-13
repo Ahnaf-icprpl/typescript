@@ -21,3 +21,31 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+function checkOrders(list: { id: string; paid: boolean; stockAvailable: boolean }[]) {
+  let readyToShip = 0;
+  let unpaid = 0;
+  let waitingStock = 0;
+  let readyIds: string[] = [];
+
+  for (let i = 0; i < list.length; i++) {
+    let order = list[i];
+    if (order.paid && order.stockAvailable) {
+      readyToShip++;
+      readyIds.push(order.id);
+    }
+    if (!order.paid) {
+      unpaid++;
+    }
+    if (!order.stockAvailable) {
+      waitingStock++;
+    }
+  }
+
+  console.log("Ready to ship:", readyToShip);
+  console.log("Unpaid:", unpaid);
+  console.log("Waiting for stock:", waitingStock);
+  console.log("Ready IDs:", readyIds.join(", "));
+}
+
+checkOrders(orders);
