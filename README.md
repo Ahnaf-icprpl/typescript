@@ -136,6 +136,8 @@ npm run check
 
 ## Working on Tasks
 
+Module 05 (`src/05-functions/tasks/`) contains completed, comment-free solutions for all ten exercises. Run any solution with `npm run example src/05-functions/tasks/task-01.ts`, replacing the filename as needed. The exercises cover grades, bonuses, price totals, attendance, sales, enrollment, assignments, hospital reports, and course statistics.
+
 Each task file contains:
 
 - **Instructions** at the top explaining what to do
